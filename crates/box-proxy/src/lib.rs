@@ -7,7 +7,9 @@
 
 /// Returns true when `host` exactly matches an entry in `allowlist`.
 pub fn is_allowed_domain(host: &str, allowlist: &[&str]) -> bool {
-    allowlist.iter().any(|allowed| host.eq_ignore_ascii_case(allowed))
+    allowlist
+        .iter()
+        .any(|allowed| host.eq_ignore_ascii_case(allowed))
 }
 
 #[cfg(test)]
