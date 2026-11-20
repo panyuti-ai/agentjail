@@ -1,0 +1,13 @@
+[package]
+name = "box-proxy"
+description = "Zero-trust egress proxy for agentjail: domain allowlist, SSRF guard, secret scanning"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

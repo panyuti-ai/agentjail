@@ -1,0 +1,27 @@
+[workspace]
+resolver = "2"
+members = ["crates/box-core", "crates/box-proxy", "crates/box-cli"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+license = "MIT"
+repository = "https://github.com/panyuti-ai/agentjail"
+
+[workspace.dependencies]
+box-core = { path = "crates/box-core" }
+box-proxy = { path = "crates/box-proxy" }
+clap = { version = "4", features = ["derive"] }
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
